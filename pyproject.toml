@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "step2api"
+version = "0.1.0"
+description = "StepFun Web Chat to OpenAI-Compatible API Wrapper"
+readme = "README.md"
+license = {text = "AGPL-3.0"}
+requires-python = ">=3.10"
+authors = [
+    {name = "Step2API Contributors"}
+]
+keywords = ["stepfun", "openai", "api", "wrapper", "chat", "completion"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: GNU Affero General Public License v3",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "fastapi>=0.109.0",
+    "uvicorn[standard]>=0.27.0",
+    "httpx>=0.27.0",
+    "pydantic>=2.5.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.23",
+    "httpx-sse>=0.4.0",
+]
+
+[project.scripts]
+step2api = "step2api.main:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
