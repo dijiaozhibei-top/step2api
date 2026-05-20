@@ -1,0 +1,20 @@
+version: "3.8"
+
+services:
+  step2api:
+    build: .
+    container_name: step2api
+    ports:
+      - "${STEP2API_HOST_PORT:-6011}:5001"
+    environment:
+      - STEP2API_ADMIN_KEY=${STEP2API_ADMIN_KEY:-}
+      - STEP2API_CONFIG_PATH=/data/config.json
+      - STEP2API_HOST=0.0.0.0
+      - STEP2API_PORT=5001
+    volumes:
+      - ./config.json:/data/config.json:rw
+      - step2api_data:/data
+    restart: unless-stopped
+
+volumes:
+  step2api_data:

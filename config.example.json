@@ -1,0 +1,49 @@
+{
+  "host": "127.0.0.1",
+  "port": 5001,
+  "keys": [
+    "sk-step2api-your-secret-key-here"
+  ],
+  "api_keys": [
+    {
+      "key": "sk-step2api-your-secret-key-here",
+      "name": "default",
+      "remark": "Default API key"
+    }
+  ],
+  "accounts": [
+    {
+      "phone": "+86 13800138000",
+      "name": "account1",
+      "remark": "My StepFun account"
+    }
+  ],
+  "model_aliases": {
+    "gpt-4": "step-3.5-flash",
+    "gpt-4o": "step-3.5-flash",
+    "gpt-3.5-turbo": "step-2-mini",
+    "claude-sonnet-4-6": "step-3.5-flash",
+    "claude-opus-4-6": "step-3.5-flash"
+  },
+  "runtime": {
+    "account_max_inflight": 2,
+    "account_max_queue": 4,
+    "token_refresh_interval": 600
+  },
+  "auto_delete": {
+    "mode": "none",
+    "note": "none / single / all - auto delete chat sessions after request"
+  },
+  "current_input_file": {
+    "enabled": true,
+    "threshold": 0
+  },
+  "thinking_injection": {
+    "enabled": true,
+    "prompt": ""
+  },
+  "login": {
+    "sms_code_webhook": "",
+    "note": "If set, SMS verification codes will be sent to this webhook URL"
+  }
+}
